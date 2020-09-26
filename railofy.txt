@@ -1,0 +1,39 @@
+import java.util.*;
+class Main{
+    public static int static function curry1(String str){
+        int pVal=0;
+        int qVal=0;
+        int rVal=0;
+        int cnt=0;
+        for(char c: str.toCharArray()){
+            cnt++;
+            if(c=='P'){
+                pVal+=cnt;
+            }else if(c=='Q'){
+                qVal+=cnt;
+            }
+            else{
+                rVal+=cnt;
+            }
+        }
+        int tot=pVal+qVal+rVal;
+        return tot;
+
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        int sum=0;
+        for(int i=0;i<n;i++){
+           sum+=sc.nextInt();
+        }
+        int z=curry1(str);
+        if(sum==z){
+            System.out.println("perfect");
+        }else{
+            System.out.println("No luck");
+        }
+    }
+}
